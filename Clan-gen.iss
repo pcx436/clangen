@@ -36,10 +36,11 @@ AppPublisherURL={#ApplicationURL}
 AppVersion={#ApplicationVersion}
 
 ; Installer icon (if you'd like to provide one)
+; Download this from https://raw.githubusercontent.com/Thlumyn/clangen/development/main.ico
 SetupIconFile=.\main.ico
 ; Uninstalling will not delete saves so I figured no need for an uninstaller.
-Uninstallable=no
-
+UninstallDisplayIcon=.\main.ico
+UninstallDisplayName={#ApplicationFullName} {#ApplicationVersion}
 ; Installer information
 VersionInfoProductName={#ApplicationFullName}
 VersionInfoVersion={#ApplicationVersion}
