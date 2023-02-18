@@ -15,7 +15,7 @@
 ;#define DocumentationFolder "."
 
 ; Filenames for the compiled installer
-#define InstallerBaseName ApplicationBaseName + " " + ApplicationVersion
+#define InstallerBaseName ApplicationBaseName + "_Win64"
 #define InstallerFullName InstallerBaseName + ".exe"
 
 ; Filenames for the Inno sourcecode
