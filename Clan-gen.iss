@@ -56,8 +56,5 @@ Name: "{app}\saves"; Permissions: users-full
 ;-------------------------------------------------------------------------------
 [Icons]
 ;; Create Clan-gen (fan edit) icons
-Name: {group}\Clan-gen (fan edit); Filename: {app}\main.exe; Comment: "Clan-gen (fan edit) by Sablesteel"
-Name: {commondesktop}\Clan-gen (fan edit); Filename: {app}\main.exe; Comment: "Clan-gen (fan edit) by Sablesteel";
-
-; Uninstall program Comment out to disable shortcut 
-;Name: {group}\Uninstall {#ApplicationFullName}; Filename: {uninstallexe}
+Name: {group}\Clan-gen (fan edit); Filename: {app}\Clangen.exe; Comment: "Clan-gen (fan edit) by Sablesteel"
+Name: {commondesktop}\Clan-gen (fan edit); Filename: {app}\Clangen.exe; Comment: "Clan-gen (fan edit) by Sablesteel";
