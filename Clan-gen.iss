@@ -24,11 +24,7 @@
 ;-------------------------------------------------------------------------------
 
 [Setup]
-; if using a Eula uncomment this line
-;LicenseFile=Eula.txt
-
 OutputBaseFilename={#InstallerBaseName}
-
 SourceDir=.
 AppName={#ApplicationFullName}
 DefaultDirName={commonpf}\{#ApplicationFullName}
