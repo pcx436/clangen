@@ -144,7 +144,6 @@ jobs:
         with:
           filepath: 'Clan-gen_Win64.iss'
       - uses: actions/upload-artifact@v3
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           name: Clangen_Win64
           path: Clangen_Win64.exe
@@ -183,19 +182,19 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
+        with:
+          filepath: 'Clan-gen_Win64.iss'
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
-      - name: Release 
+          path: Clangen_Win64.exe
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_Win64_Windows10+.zip
-          
+          files: Clangen_Win64.exe
+
   build_macos64:
     # For commits to the original mac build action see:
     # https://github.com/Thlumyn/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
