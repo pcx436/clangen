@@ -1,6 +1,5 @@
 import pygame
 
-from scripts.game_structure.game_essentials import *
 try:
     import ujson
 except ImportError:
@@ -184,12 +183,12 @@ class Sprites():
             sprites.make_group('collarsextra', (a, 0),
                                f'collarsextra{i}',
                                sprites_y=2)
-        for a, i in enumerate(["GREEN", "RAINBOW", "BLACK", "SPIKES"]):
+        for a, i in enumerate(["GREEN", "RAINBOW", "BLACK", "SPIKES", "WHITE"]):
             sprites.make_group('collars', (a, 1), f'collars{i}')
             sprites.make_group('collarsextra', (a, 1),
                                f'collarsextra{i}',
                                sprites_y=2)
-        for a, i in enumerate(["PINK", "PURPLE", "MULTI"]):
+        for a, i in enumerate(["PINK", "PURPLE", "MULTI", "INDIGO"]):
             sprites.make_group('collars', (a, 2), f'collars{i}')
             sprites.make_group('collarsextra', (a, 2),
                                f'collarsextra{i}',
@@ -203,12 +202,12 @@ class Sprites():
                                f'collarsextra{i}',
                                sprites_y=2)
         for a, i in enumerate(
-                ["GREENBELL", "RAINBOWBELL", "BLACKBELL", "SPIKESBELL"]):
+                ["GREENBELL", "RAINBOWBELL", "BLACKBELL", "SPIKESBELL", "WHITEBELL"]):
             sprites.make_group('bellcollars', (a, 1), f'collars{i}')
             sprites.make_group('bellcollarsextra', (a, 1),
                                f'collarsextra{i}',
                                sprites_y=2)
-        for a, i in enumerate(["PINKBELL", "PURPLEBELL", "MULTIBELL"]):
+        for a, i in enumerate(["PINKBELL", "PURPLEBELL", "MULTIBELL", "INDIGOBELL"]):
             sprites.make_group('bellcollars', (a, 2), f'collars{i}')
             sprites.make_group('bellcollarsextra', (a, 2),
                                f'collarsextra{i}',
@@ -222,14 +221,33 @@ class Sprites():
                                f'collarsextra{i}',
                                sprites_y=2)
         for a, i in enumerate(
-                ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW"]):
+                ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "WHITEBOW"]):
             sprites.make_group('bowcollars', (a, 1), f'collars{i}')
             sprites.make_group('bowcollarsextra', (a, 1),
                                f'collarsextra{i}',
                                sprites_y=2)
-        for a, i in enumerate(["PINKBOW", "PURPLEBOW", "MULTIBOW"]):
+        for a, i in enumerate(["PINKBOW", "PURPLEBOW", "MULTIBOW", "INDIGOBOW"]):
             sprites.make_group('bowcollars', (a, 2), f'collars{i}')
             sprites.make_group('bowcollarsextra', (a, 2),
+                               f'collarsextra{i}',
+                               sprites_y=2)
+        for a, i in enumerate([
+            "CRIMSONNYLON", "BLUENYLON", "YELLOWNYLON", "CYANNYLON", "REDNYLON",
+            "LIMENYLON"
+        ]):
+            sprites.make_group('nyloncollars', (a, 0), f'collars{i}')
+            sprites.make_group('nyloncollarsextra', (a, 0),
+                               f'collarsextra{i}',
+                               sprites_y=2)
+        for a, i in enumerate(
+                ["GREENNYLON", "RAINBOWNYLON", "BLACKNYLON", "SPIKESNYLON", "WHITENYLON"]):
+            sprites.make_group('nyloncollars', (a, 1), f'collars{i}')
+            sprites.make_group('nyloncollarsextra', (a, 1),
+                               f'collarsextra{i}',
+                               sprites_y=2)
+        for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
+            sprites.make_group('nyloncollars', (a, 2), f'collars{i}')
+            sprites.make_group('nyloncollarsextra', (a, 2),
                                f'collarsextra{i}',
                                sprites_y=2)
 
@@ -242,7 +260,7 @@ for x in [
     'whitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
     'speckledextra', 'whiteextra', 'eyesextra', 'eyes2extra', 'skin',
     'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
-    'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
+    'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra', 'nyloncollars', 'nyloncollarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
     'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
     'rosettecolours', 'rosetteextra', 'smokecolours', 'smokeextra', 'tickedcolours', 'tickedextra',
@@ -256,7 +274,8 @@ for x in [
     'tortiesextrasolid', 'tortiesextratabby', 'tortiesextrabengal', 'tortiesextramarbled', 'tortiesextraticked',
     'tortiesextrasmoke', 'tortiesextrarosette', 'tortiesextraspeckled',
     'tortiesextramackerel', 'tortiesextraclassic', 'tortiesextrasokoke', 'tortiesextraagouti',
-    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew'
+    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew', 'fademask',
+    'fadestarclan', 'fadedarkforest'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -284,6 +303,11 @@ sprites.make_group('lightingnew', (0, 0), 'lighting', sprites_y=5)
 
 sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
 sprites.make_group('lineartdf', (0, 0), 'lineartdf', sprites_y=5)
+
+# Fading Fog
+sprites.make_group('fademask', (0, 0), 'fademask', sprites_y=15)
+sprites.make_group('fadestarclan', (0, 0), 'fadestarclan', sprites_y=15)
+sprites.make_group('fadedarkforest', (0, 0), 'fadedf', sprites_y=15)
 
 for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
