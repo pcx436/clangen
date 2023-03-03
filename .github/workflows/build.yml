@@ -37,12 +37,12 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
           path: Clangen_Linux64_glibc2.31+.tar.xz
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_Linux64_glibc2.31+.tar.xz
-          
+
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
     steps:
@@ -76,12 +76,12 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
           path: Clangen_Linux64_glibc2.35+.tar.xz
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_Linux64_glibc2.35+.tar.xz
-          
+
   build_win32:
     runs-on: windows-2019
     steps:
@@ -153,7 +153,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
-      #- name: Setup UPX 
+      #- name: Setup UPX
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
@@ -199,7 +199,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
-      #- name: Setup UPX 
+      #- name: Setup UPX
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
@@ -259,7 +259,7 @@ jobs:
         with:
           name: Clangen_macOS64.dmg
           path: Clangen_macOS64.dmg
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
