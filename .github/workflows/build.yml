@@ -160,8 +160,7 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
-      - name: Generate Windows Installer
-        uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
+      - uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
         with:
           filepath: 'Clan-gen_Win64.iss'
       - uses: actions/upload-artifact@v3
@@ -207,8 +206,7 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
-      - name: Generate Windows Installer
-        uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
+      - uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
         with:
           filepath: 'Clan-gen_Win64.iss'
       - uses: actions/upload-artifact@v3
