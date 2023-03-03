@@ -1,6 +1,6 @@
 name: PyInstaller build
 
-on: [push, workflow_dispatch]
+on: [push]
 
 jobs:
   build_ubuntu_20_04:
